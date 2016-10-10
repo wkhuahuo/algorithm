@@ -17,7 +17,7 @@ public class CountingSort {
             if(A[i]<min){
                 min = A[i];
             }
-        }//获取最大值和最小值
+        }//获取最大值和最小值//
         int arr[] = new int[max-min+1];//开辟数组
         for(int i=0; i<arr.length; i++){//初始化
             arr[i] = 0;
