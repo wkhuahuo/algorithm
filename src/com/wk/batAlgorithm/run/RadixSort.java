@@ -8,16 +8,17 @@ public class RadixSort {
 
     public int[] radixSort(int[] A, int n) {
         // write code here
-        int basicArr[] = new int[10];
-        int extroSpace[] = new int[n];
+
         int max = A[0];
         for(int i=0;i<A.length;i++){
             if(A[i]>max){
                 max = A[i];
             }
         }
-        for(int i =0;i<getLength(max);i++){
-
+        int extroSpace[] = new int[n];
+        int wei = getLength(max);
+        for(int i =0;i<wei;i++){//得到最大位数
+            int basicArr[] = new int[10];
             for(int j = 0;j<A.length;j++){//遍历A所有元素，把分到相应的桶中
                 basicArr[getNum(A[j], i)]++;
             }
@@ -25,8 +26,12 @@ public class RadixSort {
                 basicArr[j]+= basicArr[j-1];
             }
 
-            for(int j=n-1; j>0;j--){
-                extroSpace[basicArr[getNum(A[j],i)]--] = A[j];
+            for(int j=n-1; j>=0;j--){
+                extroSpace[basicArr[getNum(A[j],i)]-1] = A[j];
+                basicArr[getNum(A[j],i)]--;
+            }
+            for(int j=0;j<n;j++){
+                A[j] = extroSpace[j];
             }
 
         }
@@ -36,12 +41,12 @@ public class RadixSort {
 
     private int  getNum(int a, int posi){
         int num=a;
-        int tmp[] ={10, 100, 1000, 10000};
-        for(int i=0;i<posi-1;i++){
-
-            num = num/tmp[i];
+        int tmp =10;
+        while(posi>0){
+            num = num/tmp;
+            posi--;
         }
-        num = num%tmp[i];
+        num = num%tmp;
 
         return num;
     }
