@@ -1,4 +1,4 @@
-package com.wk.batAlgorithm.run;
+package com.wk.batAlgorithm.sort.base;
 
 /**
  * Created by wkhuahuo on 16/10/6.

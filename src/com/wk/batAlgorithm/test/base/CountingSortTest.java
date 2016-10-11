@@ -1,6 +1,6 @@
-package com.wk.batAlgorithm.test;
+package com.wk.batAlgorithm.test.base;
 
-import com.wk.batAlgorithm.run.CountingSort;
+import com.wk.batAlgorithm.sort.base.CountingSort;
 import junit.framework.TestCase;
 
 /**
