@@ -7,10 +7,11 @@ public class SmallScaleSort {
 
     public int[] sortElement(int[] A, int n, int k) {
 
+        for(int i=((k-1)-1)/2;i>=0;i--){
+            adjustHeap(A,i,k-1,0);
+        }
         for(int i=0;i<=n-k;i++){
-
             adjustHeap(A, 0, k-1,i);
-
         }
     return A;
 
