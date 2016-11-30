@@ -1,5 +1,7 @@
 package com.wk.batAlgorithm.test.practice;
 
+import com.wk.batAlgorithm.sort.practice.RepeatChecker;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -14,9 +16,12 @@ public class RepeatCheckerTest {
 返回：true
     * */
     @Test
-    public void testCheckDuplicate(int[] a, int n) {
+    public void testCheckDuplicate() {
         // write code here
-
+        int[] a = {2,1,3,7,5,5,6};
+        RepeatChecker rc = new RepeatChecker();
+        boolean flg = rc.checkDuplicate(a,a.length);
+        Assert.assertTrue(flg == true);
     }
 
 }
