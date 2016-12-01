@@ -1,5 +1,7 @@
 package com.wk.batAlgorithm.test.practice;
 
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
+import com.wk.batAlgorithm.sort.practice.ThreeColor;
 import org.junit.Test;
 
 /**
@@ -8,6 +10,31 @@ import org.junit.Test;
 public class ThreeColorTest {
     @Test
     public void testThreeColor1(){
+        int[] A ={0,1,1,2,1,0};
+        ThreeColor threeColor = new ThreeColor();
 
+        for(int i = 0;i<A.length;i++) {
+            System.out.print(A[i]+" ");
+        }
+        System.out.println();
+        A = threeColor.sortThreeColor(A,A.length);
+        for(int i = 0;i<A.length;i++) {
+            System.out.print(A[i]+" ");
+        }
+    }
+    @Test
+    public void testThreeColor2(){
+        int[] A ={0,1,1,2,1,0};
+        ThreeColor threeColor = new ThreeColor();
+
+        for(int i = 0;i<A.length;i++) {
+            System.out.print(A[i]+" ");
+        }
+        System.out.println();
+        A = threeColor.sortThreeColorofBest(A,A.length);
+        for(int i = 0;i<A.length;i++) {
+            System.out.print(A[i]+" ");
+        }
+        System.out.println();
     }
 }
