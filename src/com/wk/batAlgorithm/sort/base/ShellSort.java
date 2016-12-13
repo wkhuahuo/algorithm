@@ -4,21 +4,35 @@ public class ShellSort {
 	public int[] shellSort(int[] A, int n) {
 		int step = n/2;
 		while (step>0) {
-			for (int i = 0; i < step; i++) {
+			for (int i = 0; i <step; i++) {
 				for (int j = i + step; j < n; j += step) {
-					int pre = j - step;
-					int pos = j;
-					int tmp = 0;
-					while (pre >= i && A[pos] < A[pre]) {
-						tmp = A[pos];
-						A[pos] = A[pre];
-						A[pre] = tmp;
-						pre -= step;
+					for(int k = j-step;k>=i;k-=step){
+						if(compare(A,k,k+step)){
+							swap(A,k,k+step);
+						}else{
+							break;
+						}
 					}
+
 				}
 			}
-			step--;
+			step/=2;
 		}
 		return A;
+	}
+
+	private void swap(int[] a, int k, int i) {
+		int tmp;
+		tmp = a[k];
+		a[k] = a[i];
+		a[i] = tmp;
+	}
+
+	private boolean compare(int[] a, int k, int i) {
+		if(a[k]>a[i]) {
+			return true;//a[k]>a[i]
+		}else {
+			return false;
+		}
 	}
 }
