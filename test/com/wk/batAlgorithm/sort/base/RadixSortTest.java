@@ -1,6 +1,5 @@
-package com.wk.batAlgorithm.test.base;
+package com.wk.batAlgorithm.sort.base;
 
-import com.wk.batAlgorithm.sort.base.RadixSort;
 import junit.framework.TestCase;
 
 /**

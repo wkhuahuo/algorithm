@@ -1,6 +1,5 @@
-package com.wk.batAlgorithm.test.practice;
+package com.wk.batAlgorithm.sort.practice;
 
-import com.wk.batAlgorithm.sort.practice.SmallScaleSort;
 import junit.framework.TestCase;
 
 /**

@@ -1,7 +1,5 @@
-package com.wk.batAlgorithm.test.practice;
+package com.wk.batAlgorithm.sort.practice;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
-import com.wk.batAlgorithm.sort.practice.ThreeColor;
 import org.junit.Test;
 
 /**

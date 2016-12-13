@@ -1,6 +1,5 @@
-package com.wk.batAlgorithm.test.practice;
+package com.wk.batAlgorithm.sort.practice;
 
-import com.wk.batAlgorithm.sort.practice.SubSequence;
 import org.junit.Assert;
 import org.junit.Test;
 

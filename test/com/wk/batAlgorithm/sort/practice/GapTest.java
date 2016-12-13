@@ -1,7 +1,5 @@
-package com.wk.batAlgorithm.test.practice;
+package com.wk.batAlgorithm.sort.practice;
 
-import com.wk.batAlgorithm.sort.practice.Gap;
-import junit.framework.Assert;
 import org.junit.Test;
 
 /**

@@ -1,6 +1,4 @@
-package com.wk.batAlgorithm.test.base;
-
-import com.wk.batAlgorithm.sort.base.MergeSort;
+package com.wk.batAlgorithm.sort.base;
 
 import junit.framework.TestCase;
 
