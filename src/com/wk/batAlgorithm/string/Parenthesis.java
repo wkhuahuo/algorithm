@@ -6,26 +6,22 @@ package com.wk.batAlgorithm.string;
 public class Parenthesis {
     public boolean chkParenthesis(String A, int n) {
 
-        int back =0;
-        boolean previous = true;
+        int left =0;
+        boolean previous = true;//true:left; false:right;
         for(int i=0;i<n;i++){
             if(A.charAt(i) == '('){
-                if(previous) {
-                    back++;
-                }else{
-                    if(back>0){
-                        return false;
-                    }
+                left++;
+                if(!previous){
+                    previous = true;
                 }
             }else if(A.charAt(i) == ')'){
-                if(back<0) {
+                previous = false;
+
+                if(left<=0){
                     return false;
-                }else{
-                    back--;
-
-                    previous = false;
-
                 }
+                left--;
+
             }else{
                 return false;
             }
