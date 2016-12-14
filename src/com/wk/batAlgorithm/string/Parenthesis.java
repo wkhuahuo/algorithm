@@ -7,15 +7,15 @@ public class Parenthesis {
     public boolean chkParenthesis(String A, int n) {
 
         int left =0;
-        boolean previous = true;//true:left; false:right;
+    //   boolean previous = true;//true:left; false:right;
         for(int i=0;i<n;i++){
             if(A.charAt(i) == '('){
                 left++;
-                if(!previous){
-                    previous = true;
-                }
+//                if(!previous){
+//                    previous = true;
+//                }
             }else if(A.charAt(i) == ')'){
-                previous = false;
+//                previous = false;
 
                 if(left<=0){
                     return false;
