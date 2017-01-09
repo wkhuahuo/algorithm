@@ -27,11 +27,17 @@ public class Palindrome {
             }
 
         }
+        reverseList(mNode,tNode);
 
 
 
 
         return true;
+    }
+
+    public ListNode reverseList(ListNode mNode, ListNode tNode) {
+
+        return null;
     }
 
     public boolean isPalindrome2(ListNode pHead){

@@ -37,12 +37,26 @@ public class PalindromeTest {
 
     @Test
     public void isPalindromeTest(){
-        int[] arr = {1,2,3,4,2,1};
+        int[] arr = {1,2,3,4,3,2,1};
         ListNode listNode = initListNode(arr);
         System.out.println(myString(listNode));
         Palindrome palindrome = new Palindrome();
         boolean bool= palindrome.isPalindrome(listNode);
         System.out.println(bool);
+    }
+
+    @Test
+    public void reverseTest(){
+        int[] arr = {1,2,3,4,3,2,1};
+        ListNode listNode = initListNode(arr);
+        System.out.println(myString(listNode));
+        ListNode tailNode = listNode;
+        if(tailNode == null){return;}
+        Palindrome palindrome = new Palindrome();
+        while(tailNode.next!=null){
+            tailNode = tailNode.next;
+        }
+        ListNode tmpNode = palindrome.reverseList(listNode,tailNode);
 
     }
 
