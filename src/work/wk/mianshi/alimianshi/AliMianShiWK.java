@@ -7,17 +7,20 @@ public class AliMianShiWK {
     public static void main(String[] args){
 
            //int[] arr = {2,5,1,1,1,1,4,1,7,3,7};
-        //   int[] arr = {1,1,2,1,1,4,1,1,4,1,1};
-        int[] arr = {1,1,1};
+           int[] arr = {1,1,2,1,1,4,1,1,4,1,1};
+     //   int[] arr = {1,1,1};
         int left =0;
         int right =arr.length-1;
 
-       // Couple[] couples = test(arr,left,right);
+
         int[][] couples = test(arr,left,right);
         boolean bol =judge ( couples,arr);
         System.out.println("==_==: "+ bol);
 
     }
+
+
+
     public static boolean  judge (int[][] couples,int[]arr){
         for(int i=0;i<couples.length;i++){
 
