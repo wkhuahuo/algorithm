@@ -35,7 +35,7 @@ public class StackPushPop {
 	}
 	
 	//26ms 503k
-	public boolean IsPopOrder(int [] pushA,int [] popA) {
+	public boolean IsPopOrder3(int [] pushA,int [] popA) {
 		Stack<Integer> s = new Stack<Integer>();
 		int ipop = 0;
 		for(int ipush=0;ipush<pushA.length;ipush++){
@@ -50,5 +50,21 @@ public class StackPushPop {
 		}
 		return false;
 	}
-	
+	public boolean IsPopOrder(int [] pushA,int [] popA) {
+
+		Stack<Integer> stack = new Stack<>();
+		int j=0;
+		for(int i=0;i<pushA.length;i++){
+			stack.push(pushA[i]);
+			while(stack.peek() == popA[j]){
+				j++;
+				stack.pop();
+				if(stack.empty()){
+					return true;
+				}
+			}
+
+		}
+		return false;
+	}
 }
