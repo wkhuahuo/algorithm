@@ -1,6 +1,6 @@
 package com.wk.swordoffer.test;
 
-import com.wk.swordoffer.run.ReorderOddEven;
+import com.wk.swordoffer.run.Chapter3.ReorderOddEven;
 
 public class ReverOddEvenTest {
 	public static void main(String[] args){

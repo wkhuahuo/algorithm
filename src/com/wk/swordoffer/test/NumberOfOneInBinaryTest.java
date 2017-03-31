@@ -1,6 +1,6 @@
 package com.wk.swordoffer.test;
 
-import com.wk.swordoffer.run.NumberOfOneInBinary;
+import com.wk.swordoffer.run.Chapter2.NumberOfOneInBinary;
 
 import junit.framework.TestCase;
 

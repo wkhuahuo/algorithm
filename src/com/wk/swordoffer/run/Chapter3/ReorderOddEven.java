@@ -1,11 +1,32 @@
-package com.wk.swordoffer.run;
+package com.wk.swordoffer.run.Chapter3;
 
-import java.lang.reflect.Array;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
 public class ReorderOddEven {
-	 public void reOrderArray(int [] array) {
+	public void reOrderArray(int [] array) {
+		if(array == null )return;
+		int[] oddArr  = new int[array.length];
+		int[] evenArr = new int[array.length];
+		int oddindex =0;
+		int evenindex =0;
+		for(int i=0;i<array.length;i++){
+			if((array[i] & 0x01) == 1){//奇数
+				oddArr[oddindex++] = array[i];
+			}else {
+				evenArr[evenindex++] = array[i];
+			}
+		}
+		for(int i=0;i<oddindex;i++){
+			array[i] = oddArr[i] ;
+		}
+		for(int i=0;i<evenindex;i++){
+			array[i+oddindex] = evenArr[i];
+		}
+
+	}
+	 public void reOrderArray_1(int [] array) {
 		 if (array == null) return;
 		 int[] oddArr = new int[array.length];
 		 int[] evenArr = new int[array.length];
@@ -27,7 +48,10 @@ public class ReorderOddEven {
 			 array[i+i_odd]=evenArr[i];
 		 }
 	 }
-	 
+
+	 //====================================================
+
+
 	 public void reOrderArray1(int [] array) {
 		 if (array == null) return;
 		 int i_even=0;
