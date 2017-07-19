@@ -10,6 +10,7 @@ import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
+import java.util.Set;
 
 /**
  * Created by wangkai43 on 2017/7/3.
@@ -34,11 +35,12 @@ public class SocketServerNIO {
             ssc.register(selector, SelectionKey.OP_ACCEPT);
 
             while(true){
-                if(selector.select(TIMEOUT) == 0){
+                if(selector.select(TIMEOUT) == 0){//阻塞直到超时或者有事件发生。
                     System.out.println("==");
                     continue;
                 }
-                Iterator<SelectionKey> iter = selector.selectedKeys().iterator();
+                Set<SelectionKey> iters = selector.selectedKeys();
+                Iterator<SelectionKey> iter = iters.iterator();
                 while(iter.hasNext()){
                     SelectionKey key = iter.next();
                     if(key.isAcceptable()){
@@ -73,15 +75,16 @@ public class SocketServerNIO {
         }
     }
     public static void handleAccept(SelectionKey key) throws IOException{
-        ServerSocketChannel ssChannel = (ServerSocketChannel) key.channel();
-        SocketChannel sc = ssChannel.accept();
-        sc.configureBlocking(false);
+        ServerSocketChannel ssChannel = (ServerSocketChannel) key.channel();//得到ServerSocketChannel
+        SocketChannel sc = ssChannel.accept();//非阻塞，接受连接。
+        sc.configureBlocking(false);//设置通道为非阻塞
         sc.register(key.selector(),SelectionKey.OP_READ, ByteBuffer.allocateDirect(BUF_SIZE));
+        //把该Channel注册到seleocor中。设置事件类型为读，设置缓冲区attachment。
     }
 
     public static void handleRead(SelectionKey key) throws IOException{
         SocketChannel sc = (SocketChannel) key.channel();
-        ByteBuffer buf = (ByteBuffer) key.attachment();
+        ByteBuffer buf = (ByteBuffer) key.attachment();//attachment为register函数的第三个参数
         long bytesRead = sc.read(buf);
         while(bytesRead>0){
             buf.flip();
