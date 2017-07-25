@@ -37,7 +37,6 @@ public class HelloEchoServer {
                             serverSocketChannel.pipeline().addLast(new ServerOutboundHandlerFirst());
                             serverSocketChannel.pipeline().addLast(new ServerOutboundHandlerSecond());
 
-
                             serverSocketChannel.pipeline().addLast(new ServerInboundHandlerFirst());
                             serverSocketChannel.pipeline().addLast(new ServerInboundHandlerSecond());
 

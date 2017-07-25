@@ -22,8 +22,8 @@ public class ServerInboundHandlerFirst extends ChannelInboundHandlerAdapter {
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         System.out.println(System.currentTimeMillis()+"ServerInboundHandlerFirst.channelReadComplete");
 
-       // ctx.flush();
-        System.out.println("==+=="+count++);
-        ctx.fireChannelReadComplete();
+        ctx.flush();
+//        System.out.println("==+=="+count++);
+//        ctx.fireChannelReadComplete();
     }
 }

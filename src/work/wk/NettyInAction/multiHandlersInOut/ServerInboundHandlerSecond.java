@@ -29,7 +29,7 @@ public class ServerInboundHandlerSecond extends ChannelInboundHandlerAdapter {
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         System.out.println(System.currentTimeMillis()+"ServerInboundHandlerSecond.channelReadComplete ");
-        ctx.fireChannelReadComplete();
-        //ctx.flush();
+       // ctx.fireChannelReadComplete();
+        ctx.flush();
     }
 }
